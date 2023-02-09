@@ -1,3 +1,7 @@
 <h2><%= @flight.destination %></h2>
-<p><%= @flight.price %></p>
-<p><%= @flight.duration %></p>
+<p><%= @flight.description %></p>
+<p>Date: <%= @flight.date %></p>
+<p>Departure time: <%= @flight.time.strftime("%H:%M") %></p>
+<p>Flying time: <%= @flight.duration %> hours</p>
+<p>Total £<%= @flight.price %></p>
+<%= link_to "Book this flight", new_flight_booking_path(@flight) %>
