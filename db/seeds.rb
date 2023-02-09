@@ -35,7 +35,7 @@ puts "Database cleaned"
       price: 6999
     },
     {
-      destination: "Jupiterr",
+      destination: "Jupiter",
       date: "25/12/2036",
       time: "19:15",
       description: "The largest planet in the solar system",
