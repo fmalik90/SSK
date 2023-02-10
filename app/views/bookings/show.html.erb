@@ -1,0 +1,6 @@
+<h1>Congratulations! You're set to <strong><%= @flight.destination %></strong>.</h1>
+<p>Date: <%= @flight.date %></p>
+<p>Departure time: <%= @flight.time.strftime("%H:%M") %></p>
+<p>Journey Duration: <%= @flight.duration %> hours</p>
+<p>Paid: £<%= @flight.price %></p>
+<%= link_to "Back to homepage", flights_path %>
