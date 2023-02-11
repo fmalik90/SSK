@@ -4,12 +4,20 @@ class BookingsController < ApplicationController
   end
 
   def create
+    # edit user stories
     @booking = Booking.new(booking_params)
+    @booking.flight = @flight
     if @booking.save
       redirect_to flight_path(@flight)
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @flight = Flight.find(params[:id])
+    @user = current_user
+    @booking = Booking.new
   end
 
   private

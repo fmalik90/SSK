@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :flight
-  validates :destination, :date, :time, presence: true
+  validates :destination, presence: true
 end
