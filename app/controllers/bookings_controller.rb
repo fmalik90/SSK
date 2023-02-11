@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+    # edit user stories
     @booking = Booking.new(booking_params)
     @booking.flight = @flight
     if @booking.save
