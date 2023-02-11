@@ -6,8 +6,11 @@ Rails.application.routes.draw do
   resources :flights, only: [:index, :show] do
     resources :bookings, only: [:show, :new, :create]
   end
-  resources :users
-  resources :flights, only: :destroy
+
+  resources :users do
+    resources :bookings, only [:index, :show]
+  end
+  resources :bookings, only: :destroy
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
