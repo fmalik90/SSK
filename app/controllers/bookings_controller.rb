@@ -19,6 +19,12 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
+  def destroy
+    @flight = Flight.find(params[:id])
+    @flight.destroy
+    redirect_to flights_path, status: :see_other
+  end
+
   private
 
   def booking_params
