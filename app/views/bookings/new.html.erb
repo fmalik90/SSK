@@ -1,1 +1,5 @@
-<h1>Congratulations! You booked the flight to <%= @flight.destination %></h1>
+<h1>Book a flight to <%= @flight.destination %> </h1>
+<%= simple_form_for [@flight, @booking] do |f| %>
+  <%= f.input :name %>
+  <%= f.submit "Confirm" %>
+<% end %>
