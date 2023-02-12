@@ -1,7 +1,6 @@
-<h1>Book a flight to <%= @flight.destination %> </h1>
+<h1>Confirm your trip to <%= @flight.destination %> </h1>
 <%= simple_form_for [@flight, @booking] do |f| %>
-  <%= f.input :name %>
+  <%= f.input :name, label: 'Passenger\'s Full Name' %>
   <%= f.association :flight, collection: Flight.all.order(:destination), prompt: "Select a flight", input_html: { data: { controller: "tom-select" } } %>
-  <%= f.input :seat, as: :select, collection: (1..5), required: true, prompt: "How many seats do you want?", input_html: { data: { controller: "star-rating" } } %>
-  <%= f.submit "Confirm" %>
+  <%= f.submit class: 'btn btn-primary' %>
 <% end %>
