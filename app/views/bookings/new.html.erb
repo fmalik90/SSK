@@ -1,6 +1,24 @@
-<h1>Confirm your trip to <%= @flight.destination %> </h1>
-<%= simple_form_for [@flight, @booking] do |f| %>
-  <%= f.input :name, label: 'Passenger\'s Full Name' %>
-  <%= f.association :flight, collection: Flight.all.order(:destination), prompt: "Select a flight", input_html: { data: { controller: "tom-select" } } %>
-  <%= f.submit class: 'btn btn-primary' %>
-<% end %>
+<div class="cover"></div>
+
+<div class="container margin-top-negative">
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-6 m-auto">
+        <div class="flat-show-card">
+          <h1>Book a flight to <%= @flight.destination %> </h1>
+          <div class="mt-3">
+            <h4>Date <%= @flight.date %> Time <%= @flight.time.strftime("%H:%M") %>AM</h4>
+            <%= simple_form_for [@flight, @booking] do |f| %>
+              <%= f.input :name, label: 'Full Name' %>
+              <%= f.association :flight, collection: Flight.all.order(:destination), prompt: "Select your flight", input_html: { data: { controller: "tom-select" } } %>
+              <%= f.input :seat, label: 'How many seats would you like to purchase together?', :collection => 1..5 %>
+              <div class="col-6 m-auto text-center">
+                <%= f.submit "Confirm", class: 'btn btn-success btn-lg btn-block' %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
