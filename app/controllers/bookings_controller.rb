@@ -1,16 +1,13 @@
 class BookingsController < ApplicationController
   before_action :set_flight, only: %i[ new create show ]
+  before_action :set_user, only: %i[ new create ]
 
   def new
-    @flight = Flight.find(params[:flight_id])
-    @user = current_user
     @booking = Booking.new
-    @booking.flight = @flight
+    # @booking.flight = @flight
   end
 
   def create
-    @flight = Flight.find(params[:flight_id])
-    @user = current_user
     @booking = Booking.new(booking_params)
     @booking.flight = @flight
     @booking.user = @user
@@ -26,10 +23,14 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    redirect_to flights_path, status: :see_other
+    redirect_to flights_path(@booking.flight), status: :see_other
   end
 
   private
+
+  def set_user
+    @user = current_user
+  end
 
   def set_flight
     @flight = Flight.find(params[:flight_id])
