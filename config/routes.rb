@@ -8,9 +8,15 @@ Rails.application.routes.draw do
   end
 
   resources :users do
+
     resources :bookings, only: [:index, :show]
   end
   resources :flights, only: :destroy
+
+    resources :bookings, only: [:index, :show, :create]
+  end
+  resources :bookings, only: :destroy
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

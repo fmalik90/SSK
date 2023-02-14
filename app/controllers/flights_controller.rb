@@ -7,5 +7,6 @@ class FlightsController < ApplicationController
   def show
     @user = current_user
     @flight = Flight.find(params[:id])
+    @booking = Booking.new
   end
 end

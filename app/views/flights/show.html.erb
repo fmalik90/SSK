@@ -1,3 +1,4 @@
+
  <div class="container">
   <h2><%= @flight.destination %></h2>
   <p><%= @flight.description %></p>
@@ -7,4 +8,37 @@
   <p>Total £<%= @flight.price %></p>
   <%= link_to "Book this flight", flight_booking_path(@flight) %>
   <%= link_to "Back to all flights", flights_path %>
+<div class="cover"></div>
+
+<div class="container margin-top-negative">
+  <div class="row">
+    <div class="col-8">
+      <div class="flat-show-card">
+        <h1><%= @flight.destination %></h1>
+        <p><%= @flight.description %></p>
+      </div>
+      <div class="flat-show-card">
+        <h3>Flight Details</h3>
+        <p>Date: <%= @flight.date %></p>
+        <p>Departure time: <%= @flight.time.strftime("%H:%M") %></p>
+        <p>Journey Duration: <%= @flight.duration %> hours</p>
+        <p>Total £<%= @flight.price %></p>
+        <%= image_tag "mars_show.jpg", alt: "Mars", width: 600 %>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="flat-show-card">
+        <h4>Book this flight</h4>
+        <%= simple_form_for [@flight, @booking] do |f| %>
+          <%= f.input :name, label: 'Full Name' %>
+          <%= f.association :flight, collection: Flight.all.order(:destination), prompt: "Select your flight", input_html: { data: { controller: "tom-select" } } %>
+          <%= f.input :seat, label: 'How many seats would you like to purchase together?', :collection => 1..5 %>
+          <div class="col-6 m-auto text-center">
+            <%= f.submit "Confirm", class: 'btn btn-success btn-lg btn-block' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
