@@ -9,12 +9,8 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-<<<<<<< HEAD
-    @flight = @booking.flight
-=======
     @booking.flight = @flight
     @booking.user = @user
->>>>>>> 51be0dc7100136683959929d76629b3fea71561c
     if @booking.save
       redirect_to flight_booking_path(id: @flight)
     else
