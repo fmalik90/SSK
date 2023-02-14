@@ -1,3 +1,12 @@
+
+ <div class="container">
+  <h1>Congratulations! You're set to <strong><%= @flight.destination %></strong>.</h1>
+  <p>Date: <%= @flight.date %></p>
+  <p>Departure time: <%= @flight.time.strftime("%H:%M") %></p>
+  <p>Journey Duration: <%= @flight.duration %> hours</p>
+  <p>Paid: £<%= @flight.price %></p>
+  <%= link_to "Cancel booking", flights_path(@flight), class: "btn btn-cancel", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to cancel this booking?" } %>
+  <%= link_to "Back to homepage", flights_path %>
 <<<<<<< HEAD
  <div class="container">
   <h1>Congratulations! You're set to <strong><%= @flight.destination %></strong>.</h1>
@@ -30,5 +39,6 @@
       </div>
     </div>
   </div>
+
 >>>>>>> 51be0dc7100136683959929d76629b3fea71561c
 </div>
