@@ -9,7 +9,6 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @flight = @booking.flight
     @booking.flight = @flight
     @booking.user = @user
     if @booking.save
