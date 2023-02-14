@@ -1,11 +1,13 @@
-<h1>Where's your next destination?</h1>
+<div class="container">
 
-<div class="row">
-  <% @flights.each do |flight| %>
-    <div class="col-md-4">
-      <h4><%= flight.destination %></h4>
-      <p><%= flight.description %></p>
-    </div>
-    <%= link_to "See details", flight_path(flight) %>
-  <% end %>
+<h1>Where's your next destination?</h1>
+  <div class="row">
+    <% @flights.each do |flight| %>
+      <div class="col-md-4">
+        <h4><%= flight.destination %></h4>
+        <p><%= flight.description %></p>
+      </div>
+      <%= link_to "See details", flight_path(flight) %>
+    <% end %>
+  </div>
 </div>

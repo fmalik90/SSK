@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @flight = @booking.flight
     @booking.flight = @flight
     @booking.user = @user
     if @booking.save
@@ -19,6 +20,11 @@ class BookingsController < ApplicationController
   end
 
   def show
+  end
+
+  def index
+    @user = current_user
+    @bookings = @user.bookings
   end
 
   def destroy

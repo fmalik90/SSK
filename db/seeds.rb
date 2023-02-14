@@ -7,7 +7,9 @@
 #   Character.create(name: "Luke", movie: movies.first)
 puts "Cleaning up database..."
 Flight.destroy_all
+
 puts "Database cleaned"
+
 
     Flight.create([
     {
