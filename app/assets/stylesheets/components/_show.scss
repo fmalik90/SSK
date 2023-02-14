@@ -1,0 +1,27 @@
+.cover {
+  display: block;
+  background-image: url(asset_path('galaxy.jpg'));
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+}
+
+.cover-confirm {
+  background-image: url(asset_path('takeoff.jpg'));
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  margin-top: 0;
+}
+
+.flat-show-card {
+  background: #F8F9FA;
+  padding: 50px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+  border-radius: 3px;
+}
+
+.margin-top-negative {
+  margin-top: -75px;
+}
