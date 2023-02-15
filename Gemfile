@@ -26,9 +26,10 @@ gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
+gem "dotenv-rails", groups: [:development, :test]
+
 gem "cloudinary"
 
-gem "dotenv-rails", groups: [:development, :test]
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 
 

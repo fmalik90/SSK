@@ -13,7 +13,8 @@
         <p>Departure time: <%= @flight.time.strftime("%H:%M") %></p>
         <p>Journey Duration: <%= @flight.duration %> hours</p>
         <p>Total £<%= @flight.price %></p>
-        <%= image_tag "mars_show.jpg", alt: "Mars", width: 600 %>
+        <div class="flight-image">
+        <%= cl_image_tag @flight.photo.key, height: 400, crop: :thumb %></div>
       </div>
     </div>
 

@@ -1,0 +1,10 @@
+<%= simple_form_for Flight.new do |f| %>
+  <%= f.input :destination %>
+  <%= f.input :description %>
+  <%= f.input :date %>
+  <%= f.input :time %>
+  <%= f.input :duration %>
+  <%= f.input :price %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
+<% end %>

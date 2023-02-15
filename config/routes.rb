@@ -3,12 +3,12 @@ Rails.application.routes.draw do
 
   root to: "flights#index"
 
-  resources :flights, only: [:index, :show] do
-    resources :bookings, only: [:show, :new, :create]
+  resources :flights, only: %i[new create edit udpate index show] do
+    resources :bookings, only: %i[show new create]
   end
 
   resources :users do
-    resources :bookings, only: [:index, :show, :create]
+    resources :bookings, only: %i[index show create]
   end
   resources :bookings, only: :destroy
 end
