@@ -41,7 +41,7 @@
               <%= f.input :name, label: 'Full Name' %>
             </div>
             <div class="book-form-input">
-              <%= f.association :flight, collection: Flight.all.order(:destination), prompt: "Select your flight", input_html: { data: { controller: "tom-select" } } %>
+              <%= f.association :flight, collection: Flight.all.each { |flight| flight.destination} , prompt: "Select your flight", input_html: { data: { controller: "tom-select" } } %>
             </div>
             <div class="book-form-input">
               <%= f.input :seat, label: 'How many seats would you like to purchase together?', :collection => 1..5 %>
