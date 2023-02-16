@@ -1,13 +1,18 @@
+<div class="cover">
+</div>
+<h2 class="sub-title">Where's your next destination?</h2>
 <div class="container">
-
-<h1>Where's your next destination?</h1>
-  <div class="row">
+  <div class="travel">
     <% @flights.each do |flight| %>
-      <div class="col-md-4">
-        <h4><%= flight.destination %></h4>
-        <p><%= flight.description %></p>
-      </div>
-      <%= link_to "See details", flight_path(flight) %>
+      <%= link_to flight_path(flight) do %>
+        <div>
+          <img src="https://solarsystem.nasa.gov/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBajl5IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1771be6bd46710c30aa93cd6c3ababe23ad52681/480x320_venus.png?disposition=inline">
+            <span>
+              <h3><%= flight.destination %></h3>
+              <p><%= flight.price %></p>
+            </span>
+        </div>
+      <% end  %>
     <% end %>
   </div>
 </div>
