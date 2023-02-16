@@ -14,7 +14,7 @@
   margin-top: 0;
 }
 
-.flat-show-card {
+.flight-show-card {
   background: #F8F9FA;
   padding: 50px;
   margin-bottom: 20px;
@@ -35,4 +35,16 @@
 .table {
   font-size: 18px;
   line-height: 2em;
+}
+
+.booking-show-card {
+  background: #F8F9FA;
+  padding: 50px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.1);
+  border-radius: 3px;
+}
+
+.book-show-btn-card {
+  text-align: end;
 }

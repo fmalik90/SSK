@@ -1,19 +1,30 @@
-.form-button {
-	background: #0a508a;
+.submit-btn {
 	color: #fff;
-	border: 1px solid #eee;
-  height: 50px;
-  width: 320px;
-	border-radius: 5px;
   text-align: center;
+  border: 5px;
+  padding: 10px;
 }
 
 .form-button:hover {
 	background: #024174;
 	color: #fff;
-	border: 1px solid #eee;
-  height: 50px;
-  width: 320px;
-	border-radius: 5px;
+}
+
+.btn-cancel {
+  background-color: rgb(234, 195, 20);
+  color: white;
+  padding: 10px;
   text-align: center;
+  border-radius: 3px;
+  border-color: none;
+}
+
+.btn-home {
+  background: #024174;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 3px;
+  border-color: none;
+
 }
