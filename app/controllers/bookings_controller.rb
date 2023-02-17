@@ -1,10 +1,8 @@
 class BookingsController < ApplicationController
   before_action :set_flight, only: %i[ new create show ]
-  before_action :set_user, only: %i[ new create ]
 
   def new
     @booking = Booking.new
-    # @booking.flight = @flight
   end
 
   def create
@@ -14,7 +12,7 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to flight_booking_path(id: @flight)
     else
-      render :new, status: :unprocessable_entity
+      render "flights/show", status: :unprocessable_entity
     end
   end
 
@@ -35,10 +33,6 @@ class BookingsController < ApplicationController
 
   def set_booking
     @booking = Booking.find(params[:id])
-  end
-
-  def set_user
-    @user = current_user
   end
 
   def set_flight
