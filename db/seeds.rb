@@ -10,69 +10,46 @@ Flight.destroy_all
 
 puts "Database cleaned"
 
+require "open-uri"
 
-    Flight.create([
-    {
-      destination: "Test",
-      date: "10/10/2028",
-      time: "10:35",
-      description: "The closest planet to the sun",
-      duration: 24,
-      price: 3999
-    }])
-    # {
-    #   destination: "Venus",
-    #   date: "28/02/2032",
-    #   time: "14:05",
-    #   description: "Earth's solar system twin",
-    #   duration: 22,
-    #   price: 5999
-    # },
-    # {
-    #   destination: "Mars",
-    #   date: "13/05/2046",
-    #   time: "12:34",
-    #   description: "The red planet",
-    #   duration: 18,
-    #   price: 6999
-    # },
-    # {
-    #   destination: "Jupiter",
-    #   date: "25/12/2036",
-    #   time: "19:15",
-    #   description: "The largest planet in the solar system",
-    #   duration: 24,
-    #   price: 4999
-    # },
-    # {
-    #   destination: "Saturn",
-    #   date: "19/7/2042",
-    #   time: "13:00",
-    #   description: "The Ringed Jewel",
-    #   duration: 24,
-    #   price: 5000
-    # },
-    # {
-    #   destination: "Uranus",
-    #   date: "31/12/2031",
-    #   time: "16:45",
-    #   description: "The tilted, sideways planet",
-    #   duration: 24,
-    #   price: 7999
-    # },
-    # {
-    #   destination: "Neptune",
-    #   date: "1/5/2043",
-    #   time: "11:30",
-    #   description: "A giant, stormy blue planet",
-    #   duration: 26,
-    #   price: 5999
-    # },
-    # {
-    #   destination: "Pluto",
-    #   date: "10/10/2027",
-    #   time: "23:45",
-    #   description: "Once a planet, now a dwarf planet",
-    #   duration: 34,
-    #   price: 6999
-    # }])
+file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/v1676492465/de2ahnq74gad6inxept6.jpg")
+flight = Flight.new(destination: "Mercury", date: "28/02/2032", time: "15:05", description: "The Closest Planet to The Sun", duration: 16, price: 3999)
+flight.photo.attach(io: file, filename: "mercury.jpg", content_type: "image/jpg")
+flight.save
+
+file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/v1676492465/mkwabbkkeerzn3fsn3i6.jpg")
+flight = Flight.new(destination: "Venus", date: "28/02/2023", time: "19:15", description: "Earth's Solar System Twin", duration: 22, price: 5999)
+flight.photo.attach(io: file, filename: "venus.jpg", content_type: "image/jpg")
+flight.save
+
+file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/v1676492465/mars_image_utp4sg.jpg")
+flight = Flight.new(destination: "Mars", date: "26/03/2023", time: "12:34", description: "The Red Planet", duration: 18, price: 6999)
+flight.photo.attach(io: file, filename: "mars.jpg", content_type: "image/jpg")
+flight.save
+
+file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/v1676492465/hm5y63dh9usjhwmwdjyg.jpg")
+flight = Flight.new(destination: "Jupiter", date: "25/12/2023", time: "19:15", description: "The Largest Planet in the Solar System", duration: 24, price: 4999)
+flight.photo.attach(io: file, filename: "jupiter.jpg", content_type: "image/jpg")
+flight.save
+
+file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/v1676492465/vjt0c7xy0i04rj84tknf.jpg")
+flight = Flight.new(destination: "Saturn", date: "19/4/2024", time: "13:00", description: "The Ringed Jewel", duration: 24, price: 5000)
+flight.photo.attach(io: file, filename: "saturn.jpg", content_type: "image/jpg")
+flight.save
+
+file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/v1676492465/wepyfcom0ah1mhbb1qay.jpg")
+flight = Flight.new(destination: "Uranus", date: "31/12/2023", time: "16:45", description: "The Tilted, Sideways Planet", duration: 24, price: 7999)
+flight.photo.attach(io: file, filename: "uranus.jpg", content_type: "image/jpg")
+flight.save
+
+file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/v1676492465/mhazjg6t8buigxiiajjv.jpg")
+flight = Flight.new(destination: "Neptune", date: "1/5/2024", time: "11:30", description: "A Giant, Stormy Blue Planet", duration: 26, price: 5999)
+flight.photo.attach(io: file, filename: "neptune.jpg", content_type: "image/jpg")
+flight.save
+
+file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/v1676492465/aet7lugc0mk1thffyvxq.jpg")
+flight = Flight.new(destination: "Pluto", date: "1/5/2024", time: "11:30", description: "A Dwarf Planet", duration: 26, price: 5999)
+flight.photo.attach(io: file, filename: "pluto.jpg", content_type: "image/jpg")
+flight.save
+
+puts "Flights created!"
