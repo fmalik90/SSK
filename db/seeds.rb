@@ -12,7 +12,7 @@ puts "Database cleaned"
 
 require "open-uri"
 
-file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/v1676492465/de2ahnq74gad6inxept6.jpg")
+file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/v1676732289/mercury-factfile-v2-full-width.jpg.thumb.1160.1160_yj7njb.jpg")
 flight = Flight.new(destination: "Mercury", date: "28/02/2032", time: "15:05", description: "The Closest Planet to The Sun", duration: 16, price: 3999)
 flight.photo.attach(io: file, filename: "mercury.jpg", content_type: "image/jpg")
 flight.save

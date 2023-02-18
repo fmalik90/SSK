@@ -2,12 +2,12 @@
   min-height: 100vh;
   width: 100%;
   background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3));
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Andromeda_Galaxy_560mm_FL.jpg/1920px-Andromeda_Galaxy_560mm_FL.jpg');
+  background-image: url(asset_path('galaxy1.jpg'));
   background-size: cover;
   background-position: center;
 }
 
-nav{
+.nav{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,11 +34,18 @@ nav{
  }
 
  .travel div img{
+   height: 200px;
    width: 100%;
+   border-radius: 25px;
    border-radius: 10px;
+   mix-blend-mode: normal;
+   object-fit: cover;
+   filter: brightness(0.5);
  }
+
  .travel div{
   position: relative;
+  size: 100%;
  }
 
  .travel div span{
@@ -49,12 +56,6 @@ nav{
   text-align: center;
   color: #fff;
  }
-
- /* .footer {
-  background-color: #f1f1f1;
-  padding: 10px;
-  text-align: center;
-} */
 
 .footer {
   background: #F4F4F4;
@@ -81,4 +82,17 @@ nav{
 }
 .footer .fa-heart {
   color: #D23333;
+}
+
+.nav-links li{
+  list-style: none;
+  display: inline-block;
+  margin: 10px 30px;
+}
+
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  padding: 30px;
 }
