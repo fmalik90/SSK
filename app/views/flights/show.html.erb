@@ -1,0 +1,57 @@
+<div class="cover"></div>
+
+<div class="container margin-top-negative">
+  <div class="row">
+    <div class="col-8">
+      <div class="flight-show-card">
+        <h1><strong><%= @flight.destination %></strong></h1>
+        <h4 class="d-inline-block text-emphasis mt-3 me-4"><%= @flight.date.strftime('%a %d %b %Y') %></h4>
+        <h4 class="d-inline-block text-muted mx-4 ms-5">SSK1054 <i class="fa-solid fa-shuttle-space"></i></h4>
+        <table class="table">
+          <tr>
+            <th>Departure Time</th>
+            <th>Trip Duration</th>
+            <th>Price per person</th>
+          </tr>
+          <tr>
+            <td><%= @flight.time.strftime("%H:%M") %></td>
+            <td><i class="fa-regular fa-clock"></i> <%= @flight.duration %> hours</td>
+            <td>£<%= @flight.price %></td>
+          </tr>
+        </table>
+
+        <div class="flight-image">
+          <%= cl_image_tag @flight.photo.key, height: 450, width: 750, radius: 7, crop: :fill %>
+        </div>
+      </div>
+
+      <div class="flight-show-card">
+        <h2>About <%= @flight.destination %></h2>
+        <h4 class="my-3"><em><%= @flight.description %></em></h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae tempus quam pellentesque nec. Sed enim ut sem viverra aliquet eget sit amet. Convallis a cras semper auctor neque vitae. Mauris cursus mattis molestie a iaculis at erat. Lobortis feugiat vivamus at augue eget arcu dictum. Non blandit massa enim nec dui nunc. Lectus mauris ultrices eros in cursus turpis massa tincidunt dui. Massa tincidunt dui ut ornare lectus sit amet est. Commodo odio aenean sed adipiscing diam donec adipiscing tristique. Scelerisque eu ultrices vitae auctor.</p>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="flight-show-card">
+        <h4>Book this flight</h4>
+        <%= simple_form_for [@flight, @booking] do |f| %>
+          <div class="book-form">
+            <div class="book-form-input">
+              <%= f.input :name, label: 'Full Name' %>
+            </div>
+            <div class="book-form-input">
+              <%= f.association :flight, collection: Flight.all.each { |flight| flight.destination} , prompt: "Select your flight", input_html: { data: { controller: "tom-select" } } %>
+            </div>
+            <div class="book-form-input">
+              <%= f.input :seat, label: 'How many seats would you like to purchase together?', :collection => 1..5 %>
+            </div>
+            <div class="submit-btn">
+              <%= f.submit "Confirm", class: "btn btn-primary btn-mx-auto" %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
