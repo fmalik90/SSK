@@ -25,21 +25,18 @@ class BookingsController < ApplicationController
   end
 
   def destroy
+    @booking = Booking.find(params[:id])
     @booking.destroy
     redirect_to flights_path, status: :see_other
   end
 
   private
 
-  def set_booking
-    @booking = Booking.find(params[:id])
-  end
-
   def set_flight
     @flight = Flight.find(params[:flight_id])
   end
 
   def booking_params
-    params.require(:booking).permit(:name, :flight_id, :seat)
+    params.require(:booking).permit(:name, :user_id, :flight_id, :seat)
   end
 end
