@@ -17,15 +17,15 @@
                 <th>Departure Time</th>
                 <th>Flight No.</th>
                 <th>Trip Duration</th>
-                <th>Paid</th>
                 <th>Seats purchased</th>
+                <th>Price</th>
               </tr>
               <tr>
                 <td><%= @flight.time.strftime("%H:%M") %></td>
                 <td>SSK1054</td>
                 <td><i class="fa-regular fa-clock"></i> <%= @flight.duration %> hours</td>
-                <td>£<%= @flight.price %></td>
-                <td><%= @seat %></td>
+                <td><%= @booking.seat %></td>
+                <td>£<%= @flight.price * @booking.seat %></td>
               </tr>
             </table>
           </div>
