@@ -1,217 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SSK</title>
-</head>
 <style>
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'poppins', sans-serif;
-}
 
-.header{
-  min-height: 100vh;
-  width: 50%;
-  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3));
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Andromeda_Galaxy_560mm_FL.jpg/1920px-Andromeda_Galaxy_560mm_FL.jpg');
+.space-image {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Andromeda_Galaxy_560mm_FL.jpg/1200px-Andromeda_Galaxy_560mm_FL.jpg') ;
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  filter: brightness(80%);
-}
-
-nav{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-
-}
-.logo{
-  width: 140px;
-  cursor: pointer;
-  border-radius: 70px;
-}
-.nav-links li{
-  list-style: none;
-  display: inline-block;
-  margin: 10px 30px;
-}
-.nav-links li a{
-  text-decoration: none;
-  color: #fff;
-  font-size: 2vw;
-  font-weight: 50;
-}
-.register-now {
-  text-decoration: none;
-  color: #fff;
-  font-size: 2vw;
-  font-weight: 50;
-}
-
-.container{
-  padding: 0 7%;
-}
-.header h1{
-  font-size: 5vw;
-  font-weight: 1000;
-  color: #fff;
-  text-align: center;
-  padding-top: 22%;
-}
-
-.sub-title{
-  margin: 50px 0 20px;
-  font-size: 2.2vw;
-  font-weight: 500;
-  color: #333;
-}
-
-.travel{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 20px;
-  margin-bottom: 20px;
- }
-
- .travel div img{
-   width: 100%;
-   border-radius: 10px;
- }
- .travel div{
-  position: relative;
- }
-
- .travel div span{
-  position: absolute;
-  top:50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: #fff;
- }
-
- /* .footer {
-  background-color: #f1f1f1;
-  padding: 10px;
-  text-align: center;
-} */
-
-.footer {
-  background: #F4F4F4;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100px;
-  padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
-}
-.footer-links {
-  display: flex;
-  align-items: center;
-}
-.footer-links a {
-  color: black;
-  opacity: 0.15;
-  text-decoration: none;
-  font-size: 24px;
-  padding: 0px 10px;
-}
-.footer-links a:hover {
-  opacity: 1;
-}
-.footer .fa-heart {
-  color: #D23333;
+  height: 600px;
 }
 
 </style>
-<body>
-<div class="header">
-<nav>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQecFMFDfIdx-PfIDZtmtkG0cZzED-AIy8AqA&usqp=CAU" class="logo">
-<ul class="nav-links">
-<li><a href="#">Popular Planet Trips</a></li>
-<li><a href="#">Bookings</a></li>
-</ul>
-<a href="#" class="register-now">Register Now</a>
-</nav>
-
+<div class="space-image pt-3">
   <div class="container">
-     <h1>Find Your Next Destination</h1>
+    <div class="row homepage d-flex flex-column justify-content-end">
+      <div class="col-md-4 cards-box">
+
+        <div class="card-trip">
+          <img src="https://spaceplace.nasa.gov/review/all-about-the-moon/the-moon-near-side.en.jpg">
+          <div class="card-trip-infos">
+            <div>
+              <h2>Mars</h2>
+              <p>fly to Mars!</p>
+            </div>
+              <h2 class="card-trip-pricing">£999.99</h2>
+              <i class="fas fa-plane-departure"></i>
+          </div>
+        </div>
+
+        <div class="card-trip">
+          <img src="https://www.popsci.com/uploads/2019/01/07/3BR7HFELGONI3J4CB4USPR5GWI.jpg">
+          <div class="card-trip-infos">
+            <div>
+              <h2>Neptune</h2>
+              <p>fly to Neptune!</p>
+            </div>
+              <h2 class="card-trip-pricing">£999.99</h2>
+              <i class="fas fa-plane-departure"></i>
+          </div>
+        </div>
+
+        <div class="card-trip">
+          <img src="https://www.popsci.com/uploads/2019/01/07/THFNFWTVBVSMJVYCP5BACG3YFQ.jpg">
+          <div class="card-trip-infos">
+            <div>
+              <h2>Jupiter</h2>
+              <p>fly to Jupiter!</p>
+            </div>
+              <h2 class="card-trip-pricing">£999.99</h2>
+              <i class="fas fa-plane-departure"></i>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 </div>
-
-  <div class="container">
-       <h2 class="sub-title">SSK Interstellar Travel</h2>
-       <div class="travel">
-            <div>
-            <img src="https://solarsystem.nasa.gov/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBajl5IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--1771be6bd46710c30aa93cd6c3ababe23ad52681/480x320_venus.png?disposition=inline">
-            <span>
-            <h3>Venus</h3>
-            <p>Starts @ 4999</p>
-            </span>
-            </div>
-            <div>
-            <img src="https://solarsystem.nasa.gov/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBajF5IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f83e2101be00f832081169073e7d511d19d91515/mercury_480x320_new.jpg?disposition=inline">
-            <span>
-            <h3>Mercury</h3>
-            <p>Starts @ 4999</p>
-            </span>
-            </div>
-            <div>
-            <img src="https://solarsystem.nasa.gov/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBa1J5IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e0c43c740e3f68577d54939e8081f2311113f36e/mars_480x320.jpg?disposition=inline">
-            <span>
-            <h3>Mars</h3>
-            <p>Starts @ 4999</p>
-            </span>
-            </div>
-            <div>
-            <img src="https://solarsystem.nasa.gov/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBa3B5IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b54f499dbe9d4b73a0292a51f63fcda615496b9a/jupiter_480x320_new.jpg?disposition=inline">
-            <span>
-            <h3>Jupiter</h3>
-            <p>Starts @ 4999</p>
-            </span>
-            </div>
-            <div>
-            <img src="https://solarsystem.nasa.gov/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbkp5IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--cb7cb2868fd8b4892788893961c20975baffeb52/neptune_480x320.jpg?disposition=inline">
-            <span>
-            <h3>Neptune</h3>
-            <p>Starts @ 4999</p>
-            </span>
-            </div>
-            <div>
-            <img src="https://solarsystem.nasa.gov/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBbXB5IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b7591d57707f65489874a87412390a9b34a9a74e/uranus_480x320.jpg?disposition=inline">
-            <span>
-            <h3>Uranus</h3>
-            <p>Starts @ 4999</p>
-            </span>
-            </div>
-            </div>
-
-
-
-            <%# <div class="footer">
-  <p>Footer</p>
-</div> %>
-<div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-  <div class="footer-copyright">
-    made with <i class="fas fa-heart"></i> at Le Wagon
-  </div>
-</div>
-</body>
-</html>
-
-</body>
-</html>
